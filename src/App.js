@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles/styles.css";
+import HeaderContainer from "./components/Header/HeaderContainer";
+import FruitsListContainer from "./components/FruitsList/FruitsListContainer";
+import BasketContainer from "./components/Basket/BasketContainer";
+import Error from "./components/Error/Error";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app__container">
+      <Router>
+        <HeaderContainer />
+        <Routes>
+          <Route path="/" element={<FruitsListContainer />} />
+          <Route path="/basket" element={<BasketContainer />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;

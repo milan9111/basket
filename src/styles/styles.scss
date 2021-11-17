@@ -1,0 +1,230 @@
+.app {
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  &__link {
+    align-self: center;
+    button {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #99c642;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      span {
+        color: #df542a;
+        font-size: 18px;
+        font-weight: 800;
+        padding: 3px 8px;
+      }
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: #82af29;
+      transition: 0.25s;
+    }
+    button:active {
+      background-color: #99c642;
+      transition: 0.25s;
+    }
+  }
+}
+
+.products {
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    text-align: center;
+    max-width: 400px;
+    img {
+      max-width: 200px;
+    }
+  }
+
+  &__clear {
+    text-align: center;
+    margin-top: 20px;
+    button {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #aeafab;
+      padding: 15px 285px;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: #b43434;
+      transition: 0.25s;
+    }
+    button:active {
+      background-color: #aeafab;
+      transition: 0.25s;
+    }
+  }
+}
+
+.item {
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  &__description {
+    margin-bottom: 5px;
+  }
+  &__weigth {
+    color: #808080;
+    margin-bottom: 5px;
+  }
+  &__price {
+    font-size: 20px;
+    font-weight: 600;
+    color: #df542a;
+    margin-bottom: 5px;
+  }
+  &__choice {
+    span {
+      font-size: 20px;
+      font-weight: 600;
+      color: #df542a;
+      margin-left: 15px;
+    }
+    button {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #99c642;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: #82af29;
+      transition: 0.25s;
+    }
+    button:active {
+      background-color: #99c642;
+      transition: 0.25s;
+    }
+  }
+}
+
+.basket-empty {
+  &__title {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  &__button {
+    text-align: center;
+    margin-top: 100px;
+    button {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #99c642;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: #82af29;
+      transition: 0.25s;
+    }
+    button:active {
+      background-color: #99c642;
+      transition: 0.25s;
+    }
+  }
+}
+
+.basket {
+  &__box {
+    margin-top: 50px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  img {
+    align-self: center;
+    max-width: 100px;
+  }
+  &__name {
+    align-self: center;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  &__price {
+    align-self: center;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &__remove {
+    align-self: center;
+    button {
+      border: none;
+      background-color: transparent;
+      font-size: 18px;
+      color: #808080;
+    }
+    button:hover {
+      cursor: pointer;
+      color: #b43434;
+      transition: 0.25s;
+    }
+    button:active {
+      color: #808080;
+      transition: 0.25s;
+    }
+  }
+  &__total {
+    font-size: 24px;
+    font-weight: 700;
+    color: #df542a;
+    margin-bottom: 15px;
+  }
+  &__button {
+    button {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #99c642;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: #82af29;
+      transition: 0.25s;
+    }
+    button:active {
+      background-color: #99c642;
+      transition: 0.25s;
+    }
+  }
+}
