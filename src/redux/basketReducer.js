@@ -12,6 +12,13 @@ let initialState = {
 export const basketReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FRUITS_IN_BASKET:
+      localStorage.setItem(
+        "fruitsInBasket",
+        JSON.stringify(Array.from([
+          ...state.fruitsInBasket,
+          Number(action.event),
+        ]))
+      );
       return {
         ...state,
         fruitsInBasket: Array.from([
