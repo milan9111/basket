@@ -1,11 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
-import {
-  addInBasket,
-  clearAllCard,
-  setFruitsCalcSum,
-} from "../../redux/basketReducer";
+import { addInBasket, clearAllCard } from "../../redux/basketReducer";
 import FruitsList from "./FruitsList";
 
 const FruitsListContainer = ({
@@ -13,25 +9,10 @@ const FruitsListContainer = ({
   addInBasket,
   idFruitsInBasket,
   clearAllCard,
-  setFruitsCalcSum,
+  fruitCalcSum,
 }) => {
   const onClearAll = () => {
     clearAllCard();
-  };
-
-  const fruitCalcSum = (count, id) => {
-    dataFruits.fruits.forEach((item) => {
-      if (item.id === Number(id) && Number(id) === 3) {
-        let integer = Math.floor(count / 3);
-        let fullPrice = count - integer;
-        let priceForPapaya =
-          fullPrice * item.price + integer * (item.price / 2);
-        setFruitsCalcSum(id, priceForPapaya);
-      }
-      if (item.id === Number(id) && Number(id) !== 3) {
-        setFruitsCalcSum(id, count * item.price);
-      }
-    });
   };
 
   let showFruit = dataFruits.fruits.map((item) => (
@@ -66,6 +47,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default compose(
-  connect(mapStateToProps, { addInBasket, clearAllCard, setFruitsCalcSum })
-)(FruitsListContainer);
+export default compose(connect(mapStateToProps, { addInBasket, clearAllCard }))(
+  FruitsListContainer
+);

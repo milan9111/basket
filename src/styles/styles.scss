@@ -177,6 +177,28 @@
     font-size: 18px;
     font-weight: 400;
   }
+  &__weight {
+    align-self: center;
+    font-size: 18px;
+    font-weight: 400;
+    button {
+      align-self: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: #808080;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      color: #b43434;
+      transition: 0.25s;
+    }
+    button:active {
+      color: #808080;
+      transition: 0.25s;
+    }
+  }
   &__price {
     align-self: center;
     font-size: 18px;
@@ -190,9 +212,9 @@
       background-color: transparent;
       font-size: 18px;
       color: #808080;
+      cursor: pointer;
     }
     button:hover {
-      cursor: pointer;
       color: #b43434;
       transition: 0.25s;
     }

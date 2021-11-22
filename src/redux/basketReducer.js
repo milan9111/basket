@@ -2,12 +2,11 @@ const ADD_FRUITS_IN_BASKET = "ADD-FRUITS-IN-BASKET";
 const REMOVE_FRUITS_IN_BASKET = "REMOVE-FRUITS-IN-BASKET";
 const REMOVE_ALL_CARD = "REMOVE-ALL-CARD";
 const SET_FRUITS_PRICE = "SET-FRUITS-PRICE";
+const REMOVE_ONE_ITEM_FRUIT_IN_BASKET = "REMOVE-ONE-ITEM-FRUIT-IN-BASKET";
 
 let initialState = {
-  fruitsInBasket: JSON.parse(
-    window.localStorage.getItem("fruitsInBasket") || "[]"
-  ),
-  price: JSON.parse(window.localStorage.getItem("countInBasket") || "[]"),
+  fruitsInBasket: JSON.parse(localStorage.getItem("fruitsInBasket") || "[]"),
+  price: JSON.parse(localStorage.getItem("priceInBasket") || "[]"),
 };
 
 export const basketReducer = (state = initialState, action) => {
@@ -30,11 +29,27 @@ export const basketReducer = (state = initialState, action) => {
       );
       state.price.splice(removeProductIndex, 1);
       localStorage.setItem("fruitsInBasket", JSON.stringify(newFruitsInBasket));
-      localStorage.setItem("countInBasket", JSON.stringify(state.price));
+      localStorage.setItem("priceInBasket", JSON.stringify(state.price));
+
       return {
         ...state,
         fruitsInBasket: [...newFruitsInBasket],
         price: [...state.price],
+      };
+    case REMOVE_ONE_ITEM_FRUIT_IN_BASKET:
+      if (state.fruitsInBasket.indexOf(Number(action.event)) > -1) {
+        state.fruitsInBasket.splice(
+          state.fruitsInBasket.indexOf(Number(action.event)),
+          1
+        );
+      }
+      localStorage.setItem(
+        "fruitsInBasket",
+        JSON.stringify(state.fruitsInBasket)
+      );
+      return {
+        ...state,
+        fruitsInBasket: [...state.fruitsInBasket],
       };
 
     case REMOVE_ALL_CARD:
@@ -52,7 +67,7 @@ export const basketReducer = (state = initialState, action) => {
       } else {
         state.price.splice(productIndex, 1, priceForBasket);
       }
-      localStorage.setItem("countInBasket", JSON.stringify(state.price));
+      localStorage.setItem("priceInBasket", JSON.stringify(state.price));
       return {
         ...state,
         price: [...state.price],
@@ -68,6 +83,11 @@ export let addFruitsInBasket = (event) => ({
 });
 export let removeFruitsInBasket = (event) => ({
   type: REMOVE_FRUITS_IN_BASKET,
+  event,
+});
+
+export let removeOneItemFruitInBasket = (event) => ({
+  type: REMOVE_ONE_ITEM_FRUIT_IN_BASKET,
   event,
 });
 
@@ -90,6 +110,12 @@ export const addInBasket = (event) => {
 export const removeInBasket = (event) => {
   return (dispatch) => {
     dispatch(removeFruitsInBasket(event));
+  };
+};
+
+export const removeOneItemInBasket = (event) => {
+  return (dispatch) => {
+    dispatch(removeOneItemFruitInBasket(event));
   };
 };
 

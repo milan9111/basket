@@ -2,10 +2,21 @@ import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import { Link } from "react-router-dom";
-import { removeInBasket } from "../../redux/basketReducer";
+import {
+  addInBasket,
+  removeInBasket,
+  removeOneItemInBasket,
+} from "../../redux/basketReducer";
 import Basket from "./Basket";
 
-const BasketContainer = ({ dataFruits, idFruitsInBasket, removeInBasket }) => {
+const BasketContainer = ({
+  dataFruits,
+  idFruitsInBasket,
+  removeInBasket,
+  removeOneItemInBasket,
+  fruitCalcSum,
+  addInBasket,
+}) => {
   let totalSum = 0;
   idFruitsInBasket.price.forEach((item) => {
     totalSum += item.sum;
@@ -25,8 +36,12 @@ const BasketContainer = ({ dataFruits, idFruitsInBasket, removeInBasket }) => {
       id={elem.id}
       title={elem.title}
       image={elem.image}
+      addInBasket={addInBasket}
       removeInBasket={removeInBasket}
+      removeOneItemInBasket={removeOneItemInBasket}
       calcPrice={idFruitsInBasket.price}
+      fruitCalcSum={fruitCalcSum}
+      fruitsInBasket={idFruitsInBasket.fruitsInBasket}
     />
   ));
 
@@ -61,6 +76,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default compose(connect(mapStateToProps, { removeInBasket }))(
-  BasketContainer
-);
+export default compose(
+  connect(mapStateToProps, {
+    addInBasket,
+    removeInBasket,
+    removeOneItemInBasket,
+  })
+)(BasketContainer);
