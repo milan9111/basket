@@ -8,14 +8,14 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .header__link {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .header__link button {
@@ -59,8 +59,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .products__item {
@@ -196,38 +196,70 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .basket img {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   max-width: 100px;
 }
 
 .basket__name {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   font-size: 18px;
   font-weight: 400;
 }
 
+.basket__weight {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.basket__weight button {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #808080;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.basket__weight button:hover {
+  color: #b43434;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.basket__weight button:active {
+  color: #808080;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
 .basket__price {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   font-size: 18px;
   font-weight: 400;
 }
 
 .basket__remove {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .basket__remove button {
@@ -235,10 +267,10 @@
   background-color: transparent;
   font-size: 18px;
   color: #808080;
+  cursor: pointer;
 }
 
 .basket__remove button:hover {
-  cursor: pointer;
   color: #b43434;
   -webkit-transition: 0.25s;
   transition: 0.25s;
